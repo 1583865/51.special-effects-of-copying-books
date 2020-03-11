@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #638303;
+}
+
+.book-wrap {
+	width: 300px;
+	height: 400px;
+	background-color:#fff;
+	padding: 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	/*位移变换*/
+	box-shadow: inset  300px 0 50px rgba(0,0,0,.5),0 20px 100px rgba(0,0,0,.5);
+	transition: .10s;
+	box-sizing: border-box;
+	/*怪异盒子*/
+	perspective: 1500px;
+	/*景深*/
+}
+.book-wrap:before {
+	content: "";
+	position: absolute;
+	top: -4px;
+	left: 2px;
+	width: 100%;
+	height: 4px;
+	background-color: #475b02;
+	transform: skewX(-45deg);
+	/*倾斜*/
+}
+.book-wrap:after {
+	content: "";
+	position: absolute;
+	top: -2px;
+	right: -4px;
+	width: 4px;
+	height: 100%;
+	background-color: #7ea301;
+	transform: skewY(-45deg);
+	/*倾斜*/
+}
+.book-wrap:hover {
+	box-shadow: inset  30px 0 50px rgba(0,0,0,.5),0 20px 100px rgba(0,0,0,.5);;
+	transform:translate(-50%, -50%) rotate(-10deg);
+}
+.text span{
+	display: block;
+	margin-top: 20px;
+
+}
+.bg-box {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid red;
+	background: url('./img/2.jpg') no-repeat 0px 0px;
+	background-size: cover;
+	transform-origin: left;
+	transition: .10s;
+}
+.book-wrap:hover .bg-box {
+	transform: rotateY(-140deg);
+}
